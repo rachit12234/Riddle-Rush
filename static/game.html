@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riddle Rush | Game</title>
+  <link rel="stylesheet" href="game-style.css" />
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="game-logic.js"></script>
+</head>
+<body>
+  <div class="layout-wrapper">
+
+    <!-- LEFT: Player List + Scores -->
+    <aside class="sidebar left">
+      <h3>👥 Players</h3>
+      <ul id="playerList">
+        <!-- Player names and points go here -->
+        <li>Loading players...</li>
+      </ul>
+    </aside>
+
+    <!-- CENTER: Main Game -->
+    <main class="game-container">
+      <header>
+        <h1>🧠 Riddle Rush</h1>
+        <div class="timer" id="timer">30</div>
+      </header>
+
+      <section class="riddle-box">
+        <h2 id="riddle">Loading riddle...</h2>
+      </section>
+
+      <section class="input-box">
+        <input type="text" id="answerInput" placeholder="Type your answer..." autocomplete="off" />
+        <button id="submitAnswer">Submit</button>
+      </section>
+    </main>
+
+    <!-- RIGHT: Chat Box -->
+    <aside class="sidebar right">
+      <h3>💬 Chat</h3>
+      <div id="chatMessages" class="chat-box">
+        <!-- Chat messages appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+        <button id="sendChat">Send</button>
+      </div>
+    </aside>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Lobby | Riddle Rush</title>
+    <link rel="stylesheet" href="lobby-style.css" />
+    <script defer src="lobby.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">🧠 Riddle Rush Lobby</h1>
+        <p class="room-code" id="roomCode">Room Code: <span id="roomCodeDisplay">ABCD123</span></p>
+
+        <div class="main-section">
+            <div class="players-box">
+                <h3>👥 Players in Room</h3>
+                <ul id="playerList">
+                    <li>Waiting for players...</li>
+                </ul>
+            </div>
+
+            <div class="game-settings">
+                <h3>⚙️ Game Settings</h3>
+
+                <div class="setting-group">
+                    <label for="timeLimit">⏳ Time Limit:</label>
+                    <select id="timeLimit">
+                        <option value="30">30s</option>
+                        <option value="45">45s</option>
+                        <option value="60" selected>60s</option>
+                        <option value="90">90s</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="difficulty">🎯 Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy" selected>Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="category">📚 Category:</label>
+                    <select id="category">
+                        <option value="random" selected>Random</option>
+                        <option value="logic">Logic</option>
+                        <option value="wordplay">Wordplay</option>
+                        <option value="math">Math</option>
+                        <option value="lateral">Lateral Thinking</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="rounds">🔁 Rounds:</label>
+                    <select id="rounds">
+                        <option value="3">3</option>
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="hintMode">💡 Hints:</label>
+                    <select id="hintMode">
+                        <option value="false" selected>No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="lobby-actions">
+            <button id="startGame">🚀 Start Game</button>
+            <p class="note">*Only room creator can start</p>
+        </div>
+
+        <footer>
+            Built with ❤️ using Node.js + Socket.IO
+        </footer>
+    </div>
+
+</body>
+
+</html>

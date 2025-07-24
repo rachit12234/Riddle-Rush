@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <title>Riddle Battle</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">🧠 Riddle Rush</h1>
+        <p class="tagline">Race to solve. Be the fastest mind.</p>
+
+        <div class="form-box">
+            <input type="text" id="username" placeholder="Enter your nickname" />
+            <input type="text" id="roomcode" placeholder="Enter room code (optional)" />
+
+            <div class="buttons">
+                <button type="submit" id="createRoom">🎲 Create Room</button>
+                <button type="submit" id="joinRoom">🚪 Join Room</button>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>🧩 How to Play</h3>
+            <ul>
+                <li>✔ Join or create a room</li>
+                <li>✔ Solve riddles before time runs out</li>
+                <li>✔ First correct answer gets more points!</li>
+            </ul>
+        </div>
+
+        <footer>
+            Built with ❤️ using Node.js + Socket.IO
+        </footer>
+    </div>
+</body>
+
+</html>
