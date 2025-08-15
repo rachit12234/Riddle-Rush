@@ -9,23 +9,46 @@ const server = http.createServer(app);
 const io = new Server(server);
 const PORT = 3000;
 
-// Serve static files from /public
 app.use(express.static(path.join(__dirname, "static")));
 
-// Optional: Serve index.html for the root route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "static", "index.html"));
+  res.sendFile(path.join(__dirname, "static", "Landing page", "index.html"));
 });
 
-// Sample riddles
 const riddles = [
   { question: "What has to be broken before you can use it?", answer: "egg" },
   { question: "I’m tall when I’m young, and I’m short when I’m old. What am I?", answer: "candle" },
   { question: "What month of the year has 28 days?", answer: "all" },
   { question: "What is full of holes but still holds water?", answer: "sponge" },
+  { question: "What question can you never answer yes to?", answer: "are you asleep" },
+  { question: "What is always in front of you but can’t be seen?", answer: "future" },
+  { question: "There’s a one-story house in which everything is yellow. What color are the stairs?", answer: "no stairs" },
+  { question: "What can you break, even if you never pick it up or touch it?", answer: "promise" },
+  { question: "What goes up but never comes down?", answer: "age" },
+  { question: "A man who was outside in the rain without an umbrella didn’t get a single hair on his head wet. Why?", answer: "he was bald" },
+  { question: "What gets wet while drying?", answer: "towel" },
+  { question: "What can you keep after giving to someone?", answer: "your word" },
+  { question: "I shave every day, but my beard stays the same. What am I?", answer: "barber" },
+  { question: "You see a boat filled with people. It hasn’t sunk, but when you look again, you don’t see a single person. Why?", answer: "all married" },
+  { question: "What can’t talk but will reply when spoken to?", answer: "echo" },
+  { question: "The more of this there is, the less you see. What is it?", answer: "darkness" },
+  { question: "David’s parents have three sons: Snap, Crackle, and ___?", answer: "david" },
+  { question: "What has many keys but can’t open a single lock?", answer: "piano" },
+  { question: "What can travel around the world while staying in the same corner?", answer: "stamp" },
+  { question: "What has hands but can’t clap?", answer: "clock" },
+  { question: "What has a head, a tail, but no body?", answer: "coin" },
+  { question: "What comes once in a minute, twice in a moment, but never in a thousand years?", answer: "m" },
+  { question: "What begins with T, ends with T, and has T in it?", answer: "teapot" },
+  { question: "What kind of band never plays music?", answer: "rubber band" },
+  { question: "What has one eye but can’t see?", answer: "needle" },
+  { question: "What invention lets you look right through a wall?", answer: "window" },
+  { question: "What runs all around a backyard, yet never moves?", answer: "fence" },
+  { question: "What can fill a room but takes up no space?", answer: "light" },
+  { question: "If you drop me I’m sure to crack, but give me a smile and I’ll always smile back. What am I?", answer: "mirror" },
+  { question: "I have branches, but no fruit, trunk or leaves. What am I?", answer: "bank" }
 ];
 
-// Room structure
+
 const rooms = {};
 
 io.on("connection", (socket) => {
@@ -48,7 +71,6 @@ io.on("connection", (socket) => {
     socket.join(roomCode);
     updatePlayers(roomCode);
 
-    // Auto-start when 2 players join
     if (Object.keys(rooms[roomCode].players).length === 2) {
       startGame(roomCode);
     }

@@ -10,12 +10,10 @@
 </head>
 <body>
   <div class="layout-wrapper">
-
-    <!-- LEFT: Player List + Scores -->
+    <!-- LEFT: Player List -->
     <aside class="sidebar left">
       <h3>👥 Players</h3>
       <ul id="playerList">
-        <!-- Player names and points go here -->
         <li>Loading players...</li>
       </ul>
     </aside>
@@ -24,7 +22,7 @@
     <main class="game-container">
       <header>
         <h1>🧠 Riddle Rush</h1>
-        <div class="timer" id="timer">30</div>
+        <div class="timer" id="timer">--</div>
       </header>
 
       <section class="riddle-box">
@@ -40,15 +38,12 @@
     <!-- RIGHT: Chat Box -->
     <aside class="sidebar right">
       <h3>💬 Chat</h3>
-      <div id="chatMessages" class="chat-box">
-        <!-- Chat messages appear here -->
-      </div>
+      <div id="chatMessages" class="chat-box"></div>
       <div class="chat-input">
         <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
         <button id="sendChat">Send</button>
       </div>
     </aside>
-
   </div>
 </body>
 </html>
